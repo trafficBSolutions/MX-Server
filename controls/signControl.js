@@ -18,10 +18,11 @@ const submitSign = async (req, res) => {
             city,
             state,
             zip,
+            sign,
             message
         } = req.body;
 
-       
+        const signs = JSON.parse(req.body.signs); // Parse the signs array from the request body
 
         // Ensure that file upload exists
         if (!req.files || !req.files['img'] || !req.files['img'][0]) {
@@ -51,13 +52,106 @@ const submitSign = async (req, res) => {
             city,
             state,
             zip,
+            sign,
             img: Img,
             message
         });
 
-       
+        // Format the submitted signs for the email body
+        let signsHtml = '';
+        if (signs.length > 0) {
+            signs.forEach((sign, index) => {
+                signsHtml += `
+                    <li>
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Type:</b> ${sign.signType}</p>
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Size:</b> ${sign.signSize}</p>
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Sides:</b> ${sign.signSides || 'Not specified'}</p>
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Finishing:</b> ${sign.finishing}</p>
+                        ${sign.thickness ? `<p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Thickness:</b> ${sign.thickness}</p>` : ''}
+                        ${sign.acmColor ? `<p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>ACM Color:</b> ${sign.acmColor}</p>` : ''}
+                        ${sign.acrylicColor ? `<p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Acrylic Color:</b> ${sign.acrylicColor}</p>` : ''}
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        "><b>Quantity:</b> ${sign.quantity}</p>
+                    </li>
+                `;
+            });
+            signsHtml += `</ul>`;
+        } else {
+            signsHtml = '<p>No signs submitted.</p>';
+        }
 
-        // Compose email options
+        // Compose email options with the signs included
         const mailOptions = {
             from: 'Material WorX <tbsolutions9@gmail.com>',
             to: email,
@@ -97,7 +191,7 @@ const submitSign = async (req, res) => {
                             >Dear ${first},</h1>
                         <h1 style="margin-top: 5px;
                             font-family: 'Moveo Sans w00 Regular', Arial, Helvetica, sans-serif;"
-                            >Your fleet/decal submission has been received successfully! We will be with you within 48 hours!</h1>
+                            >Your Custom Sign(s) Submission has been received successfully! We will be with you within 48 hours!</h1>
                         
                         <h1 style="
                         color:#000000;
@@ -206,6 +300,25 @@ const submitSign = async (req, res) => {
                         font-size: 30px;
                         font-family: Arial, Helvetica, sans-serif;
                         ">${zip}</p></p>
+
+                        <h1 style="
+                        color:#000000;
+                        font-family: 'Kairos W04 Extended Bold';
+                        font-style: normal;
+                        margin-top: 40px;
+                        font-size: 60px;
+                        ">Sign(s) Needed:</h1>
+
+                        <p style="
+                        font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
+                        font-style: normal;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        "> <p style="
+                        margin-top: 10px;
+                        font-size: 30px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        ">${signsHtml}</p></p>
                         <p style="
                         color:#000000;
                         font-family: 'Kairos W04 Extended Bold';
@@ -227,7 +340,7 @@ const submitSign = async (req, res) => {
                         margin-top: 80px;
                         font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
                         line-height: 26px;
-                        ">At MX, we greatly value your business. We wanted to inform you that your FLEET/DECAL VEHICLE GRAPHICS request has been successfully submitted. Thank you for taking proactive steps to ensure your vehicle(s) are
+                        ">At MX, we greatly value your business. We wanted to inform you that your Custom Sign(s) request has been successfully submitted. Thank you for taking proactive steps to ensure your vehicle(s) are
                         can stand out and effectively communicate your brand messages for you or for your businesses.
                         Our team will now review your request thoroughly to ensure how you job needs to be address. If any further information or revisions are needed, 
                         we will promptly reach out to you.
@@ -294,6 +407,7 @@ const submitSign = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
 
 module.exports = {
     submitSign
