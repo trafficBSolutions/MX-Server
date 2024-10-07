@@ -26,7 +26,8 @@ app.use('/', require('./routes/signRoute'));
 app.use('/', require('./routes/fleetRoute'));
 app.use('/', require('./routes/dryRoute'));
 app.use('/', require('./routes/windowRoute'));
-
+app.use('/', require('./routes/bannerRoute'));
+app.use('/', require('./routes/logoRoute'));
 // Start Server
 const port = 8000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
