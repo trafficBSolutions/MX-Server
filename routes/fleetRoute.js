@@ -8,7 +8,7 @@ const fs = require('fs'); // Import the 'fs' module for file system operations
 router.use (
     cors({
         credentials: true,
-        origin: 'https://www.materialworx.com'
+        origin: 'https://materialworx.netlify.app/'
     })
 );
 const storage = multer.diskStorage({
