@@ -7,7 +7,7 @@ const { submitContact } = require('../controls/contactControl');
 router.use(
     cors({
         credentials: true,
-        origin: 'https://www.materialworx.com'
+        origin: 'https://materialworx.netlify.app/'
     })
 );
 
