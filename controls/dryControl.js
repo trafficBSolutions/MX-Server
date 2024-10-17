@@ -1,5 +1,5 @@
 const DryUser = require('../users/dryUser');
-const transporter4 = require('../utils/emailConfigMX'); // Use transporter2 only
+const transporter4 = require('../utils/emailConfig');
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
