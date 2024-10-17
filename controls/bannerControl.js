@@ -3,7 +3,7 @@ const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
-const const transporter4 = require('../utils/emailConfig'); = require('../utils/emailConfig');
+const transporter4 = require('../utils/emailConfig');
 const submitBanner = async (req, res) => {
     try {
         const {
