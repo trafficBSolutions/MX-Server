@@ -1,11 +1,10 @@
 const DryUser = require('../users/dryUser');
-const transporter = require('../utils/emailConfigMX'); // Use transporter2 only
+const transporter4 = require('../utils/emailConfigMX'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
-/*
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
-*/
+
 const submitDry = async (req, res) => {
     try {
         const {
@@ -343,7 +342,7 @@ const submitDry = async (req, res) => {
         };
 
         // Send email
-        transporter.sendMail(mailOptions, (error, info) => {
+        transporter4.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
