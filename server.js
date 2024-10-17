@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 // Optionally, set up CORS globally if multiple routes need it
 app.use(cors({
     credentials: true,
-    origin: 'https://www.materialworx.com' // Adjust as needed
+    origin: 'https://materialworx.netlify.app/' // Adjust as needed
 }));
 
 // Connect to MongoDB
