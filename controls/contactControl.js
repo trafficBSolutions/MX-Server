@@ -1,11 +1,9 @@
 const ContactUser = require('../users/contactUser');
-const transporter = require('../utils/emailConfigMX'); // Use transporter2 only
+const transporter4 = require('../utils/emailConfigMX'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
-/*
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
-*/
 const submitContact = async (req, res) => {
     try {
         const { first, last, company, email, phone, message } = req.body;
@@ -35,12 +33,12 @@ const submitContact = async (req, res) => {
             to: email,
             bcc: [
                 { name: 'Material WorX', address: myEmail },
-                /*
+    
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
                 
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail }
-                 */
+                 
             ],
             subject: `MX CONTACT MESSAGE FROM ${first} ${last}`,
             html: `
@@ -191,7 +189,7 @@ const submitContact = async (req, res) => {
         };
 
         // Send email
-        transporter.sendMail(mailOptions, (error, info) => {
+        transporter4.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
