@@ -7,7 +7,7 @@ const { submitWindow } = require('../controls/windowControl');
 router.use(
     cors({
         credentials: true,
-        origin: 'https://www.materialworx.com'
+        origin: 'https://www.materialworxsignshop.com'
     })
 );
 
