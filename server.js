@@ -1,24 +1,22 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
-const cors = require('cors'); // Import CORS globally if needed
 
+// Create Express app
 const app = express();
 
-// Global Middleware
-app.use(express.json()); // To parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
-
-// Optionally, set up CORS globally if multiple routes need it
-app.use(cors({
-    credentials: true,
-    origin: 'https://materialworx.netlify.app/' // Adjust as needed
-}));
-
-// Connect to MongoDB
+// Database connection
 mongoose.connect(process.env.MONGO_URL)
-    .then(() => console.log('Database Connected'))
-    .catch((err) => console.log('Database Not Connected', err)); // Fixed error handling
+    .then(() => {
+        console.log('Database Connected');
+        // Call removeDuplicates function after database connection
+        
+    })
+    .catch((err) => console.log('Database Not Connected', err));
+
+// Middleware
+app.use(express.json());
+
 
 // Routes
 app.use('/', require('./routes/contactRoute'));
@@ -31,6 +29,11 @@ app.use('/', require('./routes/logoRoute'));
 app.use('/', require('./routes/decalRoute'));
 app.use('/', require('./routes/shirtRoute'));
 app.use('/', require('./routes/webRoute'));
-// Start Server
-const port = 8000;
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+
+// Define port
+const port = process.env.PORT || 8000;
+
+// Start server
+app.listen(port, '0.0.0.0', () => console.log(`Server is running on port ${port}`));
