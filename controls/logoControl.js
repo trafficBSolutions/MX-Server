@@ -61,12 +61,9 @@ const submitLogo = async (req, res) => {
             to: email,
             bcc: [
                 { name: 'Material WorX', address: myEmail },
-                /*
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
-                
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail }
-                 */
             ],
             subject: 'LOGO REDESIGN REQUEST',
             html: `
