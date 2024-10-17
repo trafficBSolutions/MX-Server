@@ -1,11 +1,9 @@
 const BannerUser = require('../users/bannerUser');
-const transporter = require('../utils/emailConfigMX'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
-/*
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
-*/
+const const transporter4 = require('../utils/emailConfig'); = require('../utils/emailConfig');
 const submitBanner = async (req, res) => {
     try {
         const {
@@ -69,12 +67,9 @@ const submitBanner = async (req, res) => {
             to: email,
             bcc: [
                 { name: 'Material WorX', address: myEmail },
-                /*
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
-                
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail }
-                 */
             ],
             subject: 'BANNER REQUEST',
             html: `
@@ -343,7 +338,7 @@ const submitBanner = async (req, res) => {
         };
 
         // Send email
-        transporter.sendMail(mailOptions, (error, info) => {
+        transporter4.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
