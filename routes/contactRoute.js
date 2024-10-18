@@ -7,7 +7,7 @@ const { submitContact } = require('../controls/contactControl');
 router.use(
     cors({
         credentials: true,
-        origin: 'https://www.materialworxsignshop.com'
+        origin: 'https://www.material-worx.com'
     })
 );
 
