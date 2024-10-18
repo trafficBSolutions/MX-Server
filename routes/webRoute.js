@@ -7,7 +7,7 @@ const { submitWeb } = require('../controls/webControl');
 router.use(
     cors({
         credentials: true,
-        origin: 'https://www.materialworxsignshop.com'
+        origin: 'https://www.material-worx.com'
     })
 );
 
