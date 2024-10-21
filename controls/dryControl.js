@@ -72,7 +72,7 @@ const submitDry = async (req, res) => {
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail }
             ],
-            subject: 'DRYWALL/CONCRETE/FLOOR GRAPHIC REQUEST',
+            subject: 'WALL MURAL/CONCRETE/FLOOR GRAPHIC REQUEST',
             html: `
             <!DOCTYPE html>
             <html lang="en">
@@ -92,14 +92,14 @@ const submitDry = async (req, res) => {
                     text-align: center;
                     font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
                     color:#000000;"
-                    >DRYWALL/CONCRETE/FLOOR GRAPHIC REQUEST</h2>
+                    >WALL MURAL/CONCRETE/FLOOR GRAPHIC REQUEST</h2>
                             <div style="margin-bottom: 15px;">
                         <h1 style="margin-top: 10px;
                                     font-family: 'Moveo Sans w00 Regular', Arial, Helvetica, sans-serif;"
                             >Dear ${first},</h1>
                         <h1 style="margin-top: 5px;
                             font-family: 'Moveo Sans w00 Regular', Arial, Helvetica, sans-serif;"
-                            >Your Dryall/Concrete/Floor Graphic submission has been received successfully! We will be with you within 48 hours!</h1>
+                            >Your Wall Mural/Concrete/Floor Graphic submission has been received successfully! We will be with you within 48 hours!</h1>
                         
                         <h1 style="
                         color:#000000;
@@ -292,7 +292,7 @@ const submitDry = async (req, res) => {
                         margin-top: 80px;
                         font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
                         line-height: 26px;
-                        ">At MX, we greatly value your business. We wanted to inform you that your DRYWALL/CONCRETE/FLOOR GRAPHICS request has been successfully submitted. Thank you for taking proactive steps to ensure your places are
+                        ">At MX, we greatly value your business. We wanted to inform you that your WALL MURAL/CONCRETE/FLOOR GRAPHIC request has been successfully submitted. Thank you for taking proactive steps to ensure your places are
                         can stand out and effectively communicate your brand messages for you or for your businesses.
                         Our team will now review your request thoroughly to ensure how you job needs to be address. If any further information or revisions are needed, 
                         we will promptly reach out to you.
@@ -348,14 +348,14 @@ const submitDry = async (req, res) => {
         });
 
         const response = {
-            message: 'Drywall/Concrete/Floor Graphics submitted successfully',
+            message: 'Wall Mural/Concrete/Floor Graphics submitted successfully',
             newUser: newUser // Include the newUser object in the response
         };
 
         res.status(201).json(response);
 
     } catch (error) {
-        console.error('Error submitting Drywall/Concrete/Floor Graphics:', error);
+        console.error('Error submitting Wall Mural/Concrete/Floor Graphics:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
