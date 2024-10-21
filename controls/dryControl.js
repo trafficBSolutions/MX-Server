@@ -99,7 +99,7 @@ const submitDry = async (req, res) => {
                             >Dear ${first},</h1>
                         <h1 style="margin-top: 5px;
                             font-family: 'Moveo Sans w00 Regular', Arial, Helvetica, sans-serif;"
-                            >Your fleet/decal submission has been received successfully! We will be with you within 48 hours!</h1>
+                            >Your Dryall/Concrete/Floor Graphic submission has been received successfully! We will be with you within 48 hours!</h1>
                         
                         <h1 style="
                         color:#000000;
