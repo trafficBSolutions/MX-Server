@@ -335,7 +335,7 @@ const submitSign = async (req, res) => {
                         margin-top: 80px;
                         font-family: 'Kairos W04 Extended Bold', Arial, Helvetica, sans-serif;
                         line-height: 26px;
-                        ">At MX, we greatly value your business. We wanted to inform you that your Custom Sign(s) request has been successfully submitted. Thank you for taking proactive steps to ensure your vehicle(s) are
+                        ">At MX, we greatly value your business. We wanted to inform you that your Custom Sign(s) request has been successfully submitted. Thank you for taking proactive steps to ensure your signs(s)
                         can stand out and effectively communicate your brand messages for you or for your businesses.
                         Our team will now review your request thoroughly to ensure how you job needs to be address. If any further information or revisions are needed, 
                         we will promptly reach out to you.
