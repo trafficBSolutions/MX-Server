@@ -22,54 +22,5 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const transporter2 = nodemailer.createTransport({
-    service: 'gmail',
-    secure: true,
-    logger: true,
-    debug: true,
-    secureConnection: false,
-    auth: {
-        user: process.env.EMAIL_USER_2,
-        pass: process.env.EMAIL_PASS_2
-    },
-    tls: {
-        rejectUnauthorized: true
-    }
-});
-
-const transporter3 = nodemailer.createTransport({
-    service: 'gmail',
-    secure: true,
-    logger: true,
-    debug: true,
-    secureConnection: false,
-    auth: {
-        user: process.env.EMAIL_USER_3,
-        pass: process.env.EMAIL_PASS_3
-    },
-    tls: {
-        rejectUnauthorized: true
-    }
-});
-
-const transporter4 = nodemailer.createTransport({
-    service: 'gmail',
-    secure: true,
-    logger: true,
-    debug: true,
-    secureConnection: false,
-    auth: {
-        user: process.env.EMAIL_USER_4,
-        pass: process.env.EMAIL_PASS_4
-    },
-    tls: {
-        rejectUnauthorized: true
-    }
-});
-
 module.exports = 
     transporter;
-    transporter2,
-    transporter3,
-    transporter4;
-    
