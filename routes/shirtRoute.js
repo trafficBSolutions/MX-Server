@@ -36,12 +36,11 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     limits: {
-        fileSize: 1024 * 1024 * 25, // 25MB file size limit
+      fileSize: 1024 * 1024 * 25, // 25MB per file
     },
-}).fields([
-    { name: 'img', maxCount: 1 }
-]);
-
+  }).fields([
+    { name: 'img', maxCount: 10 }
+  ]);
 // Use bodyParser to parse URL-encoded and JSON data
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
