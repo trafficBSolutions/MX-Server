@@ -39,7 +39,7 @@ const upload = multer({
         fileSize: 1024 * 1024 * 25, // 5MB file size limit
     },
 }).fields([
-    { name: 'img', maxCount: 1 }
+    { name: 'img', maxCount: 10 }
 ]);
 
 // Use bodyParser to parse URL-encoded and JSON data
