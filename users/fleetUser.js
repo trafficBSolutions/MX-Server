@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const fleetUserSchema = new mongoose.Schema({
-    first: {
-        type: String,
-        required: true
-    },
-    last: {
+    name: {
         type: String,
         required: true
     },
@@ -21,40 +17,9 @@ const fleetUserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
-    address: {
-        type: String,
-        required: true
-    },
-
-    city: { 
-        type: String,
-        required: true
-    },
-
-    state: {
-        type: String,
-        required: true
-    },
-    zip: { 
-        type: String,
-        required: true
-     },
     vehicle: {
         type: String,
         required: true
-      },
-    driverSize: {
-        required: true,
-        type: String
-      },
-      passengerSize: {
-        required: true,
-        type: String
-      },
-      doorSize: {
-        required: true,
-        type: String
       },
       finishing: {
         type: String,
@@ -66,6 +31,10 @@ const fleetUserSchema = new mongoose.Schema({
      },
     message: {
         type: String,
+        required: true
+    },
+    terms: {
+        type: Boolean,
         required: true
     }
 });
