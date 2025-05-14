@@ -78,7 +78,7 @@ const submitFleet = async (req, res) => {
                 <div style="max-width: 700px; margin: auto; background: #fff; padding: 20px; border-radius: 8px;">
                   <h2 style="color: #1dd2ff; text-align: center;">Material WorX - Fleet/Decal Graphics Request</h2>
                   <p>Hi ${name},</p>
-                  <p>Thank you for submitting your fleet/decal graphics request. We’ve received your information and will follow up within 48 hours.</p>
+                  <p>Thank you for submitting your fleet/decal graphics request.</p>
             
                   <h3 style="margin-top: 30px;">Contact Info</h3>
                   <ul>
