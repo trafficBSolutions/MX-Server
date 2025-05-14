@@ -14,16 +14,12 @@ const signSchema = new mongoose.Schema({
 
 // Main schema for user's submission
 const signUserSchema = new mongoose.Schema({
-    first: { type: String, required: true },
-    last: { type: String, required: true },
+    name: { type: String, required: true },
     company: { type: String, required: true },
     email: { type: String, required: true },
     phone: { type: String, required: true },
-    address: { type: String, required: true },
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    zip: { type: String, required: true },
     img: { type: String, required: true }, // Logo image path or URL
+    terms: { type: Boolean, required: true }, // Terms and conditions acceptance
     message: { type: String, required: true }, // Additional message from the user
     sign: [signSchema], // Array of sign objects
 }, { timestamps: true });
