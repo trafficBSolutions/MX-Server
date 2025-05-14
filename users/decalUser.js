@@ -18,11 +18,7 @@ const decalSchema = new mongoose.Schema({
     }
 });
 const decalUserSchema = new mongoose.Schema({
-    first: {
-        type: String,
-        required: true
-    },
-    last: {
+    name: {
         type: String,
         required: true
     },
@@ -38,31 +34,16 @@ const decalUserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
-    address: {
-        type: String,
-        required: true
-    },
-
-    city: { 
-        type: String,
-        required: true
-    },
-
-    state: {
-        type: String,
-        required: true
-    },
-    zip: { 
-        type: String,
-        required: true
-     },
     img: { 
         type: String, // Assuming you store the file path or URL if a structure image is provided
         required: true
      },
     message: {
         type: String,
+        required: true
+    },
+    terms: {
+        type: Boolean,
         required: true
     },
     decal: [decalSchema]
