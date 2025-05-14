@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const dryUserSchema = new mongoose.Schema({
-    first: {
-        type: String,
-        required: true
-    },
-    last: {
+    name: {
         type: String,
         required: true
     },
@@ -21,25 +17,6 @@ const dryUserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
-    address: {
-        type: String,
-        required: true
-    },
-
-    city: { 
-        type: String,
-        required: true
-    },
-
-    state: {
-        type: String,
-        required: true
-    },
-    zip: { 
-        type: String,
-        required: true
-     },
     vinylSize: {
         type: String,
         required: true
@@ -58,6 +35,10 @@ const dryUserSchema = new mongoose.Schema({
      },
     message: {
         type: String,
+        required: true
+    },
+    terms: {
+        type: Boolean,
         required: true
     }
 });
