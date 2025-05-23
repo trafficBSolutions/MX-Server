@@ -1,5 +1,5 @@
 const FleetUser = require('../users/fleetUser');
-const transporter4 = require('../utils/emailConfigMX'); // Use transporter2 only
+const transporter4 = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 
 const userEmail = 'tbsolutions4@gmail.com';
