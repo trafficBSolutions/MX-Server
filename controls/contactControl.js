@@ -4,6 +4,7 @@ const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
+const damien = 'tbsolutions14@gmail.com';
 const submitContact = async (req, res) => {
     try {
         const { first, last, company, email, phone, message } = req.body;
@@ -37,7 +38,8 @@ const submitContact = async (req, res) => {
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
                 
                 { name: 'Bryson Davis', address: mainEmail },
-                { name: 'Jonkell Tolbert', address: foreemail }
+                { name: 'Jonkell Tolbert', address: foreemail },
+                { name: 'Damien Diskey', address: damien}
                  
             ],
             subject: `MX CONTACT MESSAGE FROM ${first} ${last}`,
