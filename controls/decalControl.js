@@ -1,5 +1,5 @@
 const DecalUser = require('../users/decalUser');
-const transporter4 = require('../utils/emailConfig'); // Use transporter2 only
+const transporter5 = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 
 const userEmail = 'tbsolutions4@gmail.com';
