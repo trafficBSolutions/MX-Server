@@ -191,7 +191,7 @@ const submitContact = async (req, res) => {
         };
 
         // Send email
-        transporter4.sendMail(mailOptions, (error, info) => {
+        transporter5.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
