@@ -1,5 +1,5 @@
 const ApparelUser = require('../users/shirtUser');
-const transporter5 = require('../utils/emailConfig'); // Use transporter2 only
+const transporter6 = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 
 const userEmail = 'tbsolutions4@gmail.com';
@@ -116,7 +116,7 @@ const submitApparel = async (req, res) => {
         };
 
         // Send email
-        transporter5.sendMail(mailOptions, (error, info) => {
+        transporter6.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
