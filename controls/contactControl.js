@@ -1,5 +1,5 @@
 const ContactUser = require('../users/contactUser');
-const transporter5 = require('../utils/emailConfig');
+const transporter6 = require('../utils/emailConfig');
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
@@ -192,7 +192,7 @@ const submitContact = async (req, res) => {
         };
 
         // Send email
-        transporter5.sendMail(mailOptions, (error, info) => {
+        transporter6.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
