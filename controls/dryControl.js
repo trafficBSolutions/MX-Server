@@ -6,6 +6,7 @@ const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
 const damien = 'tbsolutions14@gmail.com';
+const andrew = 'materialworx2@gmail.com';
 const submitDry = async (req, res) => {
     try {
         const {
@@ -66,7 +67,7 @@ if (!finishing || finishing.trim() === '') {
                 { name: 'Material WorX', address: myEmail },
                 
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
-                
+                { name: 'Andrew Clements', address: andrew },
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail },
                 { name: 'Damien Diskey', address: damien}
