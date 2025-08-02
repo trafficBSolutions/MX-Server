@@ -1,24 +1,50 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const xss = require('xss-clean');
+const compression = require('compression');
 
-// Create Express app
 const app = express();
 
-// Database connection
-mongoose.connect(process.env.MONGO_URL)
-    .then(() => {
-        console.log('Database Connected');
-        // Call removeDuplicates function after database connection
-        
-    })
-    .catch((err) => console.log('Database Not Connected', err));
+// ✅ Security Middleware
 
-// Middleware
+// Sets secure HTTP headers
+app.use(helmet());
+
+// Prevents XSS attacks
+app.use(xss());
+
+// Rate limiting to avoid abuse
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  standardHeaders: true, 
+  legacyHeaders: false,
+});
+app.use(limiter);
+
+// Compress responses (performance)
+app.use(compression());
+
+// ✅ Global Middleware for parsing
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// ✅ CORS Configuration
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:3000', 'https://www.material-worx.com'] // Replace with production frontend
+}));
 
-// Routes
+// ✅ Connect to MongoDB
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch((err) => console.error('❌ MongoDB Connection Failed:', err));
+
+// ✅ Routes
 app.use('/', require('./routes/contactRoute'));
 app.use('/', require('./routes/signRoute'));
 app.use('/', require('./routes/fleetRoute'));
@@ -30,10 +56,6 @@ app.use('/', require('./routes/decalRoute'));
 app.use('/', require('./routes/shirtRoute'));
 app.use('/', require('./routes/webRoute'));
 
-
-
-// Define port
-const port = process.env.PORT || 8000;
-
-// Start server
-app.listen(port, '0.0.0.0', () => console.log(`Server is running on port ${port}`));
+// ✅ Start Server
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
