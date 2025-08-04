@@ -1,7 +1,7 @@
-const SignUser = require('../users/signUser');
-const transporter6 = require('../utils/emailConfig'); // Use transporter2 only
-const myEmail = 'tbsolutions9@gmail.com';
 
+const SignUser = require('../users/signUser');
+const transporter = require('../utils/emailConfigMX'); // Use transporter2 only
+const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
@@ -78,9 +78,8 @@ if (signs.length > 0) {
         const mailOptions = {
             from: 'Material WorX <tbsolutions9@gmail.com>',
             to: email,
-            bcc: [
-                { name: 'Material WorX', address: myEmail },
-                
+ bcc: [
+                { name: 'Material WorX', address: myEmail },   
                 { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
                 { name: 'Andrew Clements', address: andrew },
                 { name: 'Bryson Davis', address: mainEmail },
@@ -123,7 +122,7 @@ if (signs.length > 0) {
         };
 
         // Send email
-        transporter6.sendMail(mailOptions, (error, info) => {
+        transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
