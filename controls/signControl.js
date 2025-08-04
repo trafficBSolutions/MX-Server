@@ -1,6 +1,6 @@
 
 const SignUser = require('../users/signUser');
-const transporter = require('../utils/emailConfigMX'); // Use transporter2 only
+const transporter = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
@@ -147,3 +147,4 @@ if (signs.length > 0) {
 module.exports = {
     submitSign
 };
+
