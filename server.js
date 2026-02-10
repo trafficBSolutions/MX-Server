@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 // ✅ CORS Configuration
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000', 'https://www.material-worx.com'] // Replace with production frontend
+  origin: ['https://www.material-worx.com'] // Replace with production frontend
 }));
 
 // ✅ Connect to MongoDB
@@ -46,6 +46,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 // ✅ Routes
 app.use('/', require('./routes/contactRoute'));
+app.use('/', require('./routes/jobApplicationRoute'));
 app.use('/', require('./routes/signRoute'));
 app.use('/', require('./routes/fleetRoute'));
 app.use('/', require('./routes/dryRoute'));
@@ -55,6 +56,11 @@ app.use('/', require('./routes/logoRoute'));
 app.use('/', require('./routes/decalRoute'));
 app.use('/', require('./routes/shirtRoute'));
 app.use('/', require('./routes/webRoute'));
+
+// E-commerce Routes
+app.use('/', require('./routes/productRoute'));
+app.use('/', require('./routes/orderRoute'));
+app.use('/', require('./routes/paymentRoute'));
 
 // ✅ Start Server
 const PORT = process.env.PORT || 8000;
