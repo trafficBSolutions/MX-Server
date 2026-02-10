@@ -1,11 +1,11 @@
 const JobApplication = require('../users/jobApplicationUser');
-const transporter = require('../utils/emailConfigMX');
+const transporter = require('../utils/emailConfig');
 const myEmail = 'tbsolutions9@gmail.com';
-/*
+
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
-*/
+
 const submitJobApplication = async (req, res) => {
     try {
         const { first, last, email, phone, position, experience, message } = req.body;
@@ -31,11 +31,11 @@ const submitJobApplication = async (req, res) => {
             to: email,
             bcc: [
                 { name: 'Material WorX', address: myEmail }
-                /*
+                
                 { name: 'Carson Speer', address: userEmail },
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail }
-                */
+                
             ],
             subject: `JOB APPLICATION - ${position}`,
             html: `
