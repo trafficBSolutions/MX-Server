@@ -2,7 +2,7 @@ const JobApplication = require('../users/jobApplicationUser');
 const transporter = require('../utils/emailConfigMX');
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
-const mainEmail = 'tbsolutions3@gmail.com';
+const mainEmail = 'tbsolutions3@gmail.com'
 const submitJobApplication = async (req, res) => {
     try {
         const { first, last, email, phone, position, experience, message } = req.body;
