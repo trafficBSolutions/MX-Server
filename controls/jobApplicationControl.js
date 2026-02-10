@@ -1,5 +1,5 @@
 const JobApplication = require('../users/jobApplicationUser');
-const transporter = require('../utils/emailConfigMX');
+const transporter = require('../utils/emailConfig');
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
 const mainEmail = 'tbsolutions3@gmail.com'
