@@ -1,5 +1,5 @@
 const JobApplication = require('../users/jobApplicationUser');
-const transporter = require('../utils/emailConfigMX');
+const transporter = require('../utils/emailConfig');
 const myEmail = 'tbsolutions9@gmail.com';
 
 const submitJobApplication = async (req, res) => {
