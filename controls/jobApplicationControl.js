@@ -30,7 +30,7 @@ const submitJobApplication = async (req, res) => {
             from: 'Material WorX <tbsolutions9@gmail.com>',
             to: email,
             bcc: [
-                { name: 'Material WorX', address: myEmail }
+                { name: 'Material WorX', address: myEmail },
                 
                 { name: 'Carson Speer', address: userEmail },
                 { name: 'Bryson Davis', address: mainEmail },
