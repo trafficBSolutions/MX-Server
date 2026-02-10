@@ -58,10 +58,8 @@ app.use('/', require('./routes/shirtRoute'));
 app.use('/', require('./routes/webRoute'));
 
 // E-commerce Routes
-app.use('/', require('./routes/productRoute'));
-app.use('/', require('./routes/orderRoute'));
-app.use('/', require('./routes/paymentRoute'));
 
 // ✅ Start Server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
