@@ -3,7 +3,7 @@ const SignUser = require('../users/signUser');
 const transporter = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 const userEmail = 'tbsolutions4@gmail.com';
-const mainEmail = 'tbsolutions3@gmail.com';
+const mainEmail = 'tbsolutions1999@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
 const damien = 'tbsolutions14@gmail.com';
 const andrew = 'materialworx2@gmail.com';
@@ -14,7 +14,6 @@ const submitSign = async (req, res) => {
             company,
             email,
             phone,
-            sign,
             message
         } = req.body;
         
@@ -42,7 +41,7 @@ const submitSign = async (req, res) => {
             company,
             email,
             phone,
-            sign,
+            sign: signs,
             img: Img,
             terms,
             message
@@ -147,4 +146,3 @@ if (signs.length > 0) {
 module.exports = {
     submitSign
 };
-
