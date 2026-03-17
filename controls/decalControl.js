@@ -1,12 +1,13 @@
 const DecalUser = require('../users/decalUser');
-const transporter6 = require('../utils/emailConfig'); // Use transporter2 only
+const transporter = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 
 const userEmail = 'tbsolutions4@gmail.com';
-const mainEmail = 'tbsolutions3@gmail.com';
+const mainEmail = 'tbsolutions1999@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
 const damien = 'tbsolutions14@gmail.com';
 const andrew = 'materialworx2@gmail.com';
+
 const submitDecal = async (req, res) => {
     try {
         const {
@@ -14,7 +15,6 @@ const submitDecal = async (req, res) => {
             company,
             email,
             phone,
-            decal,
             message
         } = req.body;
 const terms = req.body.terms === 'true' || req.body.terms === true ? true : false;
@@ -47,7 +47,7 @@ const terms = req.body.terms === 'true' || req.body.terms === true ? true : fals
             company,
             email,
             phone,
-            decal,
+            decal: decals,
             img: Img,
             message,
             terms
@@ -78,7 +78,7 @@ const terms = req.body.terms === 'true' || req.body.terms === true ? true : fals
             bcc: [
                 { name: 'Material WorX', address: myEmail },
                 
-                { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
+               { name: 'Carson Speer', address: userEmail }, // Add the second Gmail address to BCC
                 { name: 'Andrew Clements', address: andrew },
                 { name: 'Bryson Davis', address: mainEmail },
                 { name: 'Jonkell Tolbert', address: foreemail },
@@ -120,7 +120,7 @@ attachments: uploadedImages
         };
 
         // Send email
-        transporter6.sendMail(mailOptions, (error, info) => {
+        transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log('Error sending email notification:', error);
             } else {
