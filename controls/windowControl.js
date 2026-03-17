@@ -3,7 +3,7 @@ const transporter6 = require('../utils/emailConfig'); // Use transporter2 only
 const myEmail = 'tbsolutions9@gmail.com';
 
 const userEmail = 'tbsolutions4@gmail.com';
-const mainEmail = 'tbsolutions3@gmail.com';
+const mainEmail = 'tbsolutions1999@gmail.com';
 const foreemail = 'tbsolutions55@gmail.com';
 const damien = 'tbsolutions14@gmail.com';
 const andrew = 'materialworx2@gmail.com';
