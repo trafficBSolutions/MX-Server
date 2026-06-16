@@ -15,7 +15,7 @@ const submitBanner = async (req, res) => {
             email,
             phone,
             bannerSize,
-            hang,
+            retractableStand,
             finishing,
             message
         } = req.body;
@@ -47,7 +47,7 @@ const terms = req.body.terms === 'true' || req.body.terms === true ? true : fals
             email,
             phone,
             bannerSize,
-            hang,
+            retractableStand: retractableStand === 'true' || retractableStand === true,
             finishing,
             img: Img,
             message,
@@ -92,7 +92,7 @@ const terms = req.body.terms === 'true' || req.body.terms === true ? true : fals
                         <h3">Banner Summary:</h3>
                         
                         <li><strong>Banner Size(s):</strong> ${bannerSize}</li>
-                        <li><strong>Banner Placement(s):</strong> ${hang}</li>
+                        <li><strong>Retractable Stand:</strong> ${retractableStand === 'true' || retractableStand === true ? 'Yes' : 'No'}</li>
     <li><strong>Banner Finishing:</strong> ${finishing}</li>
                 <h3>Additional Info:</h3>
                   <li><strong>Terms & Condition:</strong> ${terms ? 'Agreed' : 'Agreed'}</li>
