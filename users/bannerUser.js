@@ -24,9 +24,9 @@ const bannerUserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    hang: {
-        type: String,
-        required: true
+    retractableStand: {
+        type: Boolean,
+        default: false
     },
     finishing: {
         type: String,
